@@ -1,0 +1,138 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+  <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="Cannon-Scheduler">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Default -->
+    <title>Faculty | WebAdvisor | University of Guelph</title>
+    <link rel="shortcut icon" href="https://webadvisor.uoguelph.ca/WebAdvisor/stylesheets/themes/GUELPH/images/guelph.ico">
+    <link href="public/css/template.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="public/css/linkPreview.css" rel="stylesheet" type="text/css">
+    <link href="public/css/css" rel="stylesheet" type="text/css">
+    <link href="public/css/ug-override.css" type="text/css" rel="stylesheet" media="screen">
+    <link href="public/css/ug-wa3.css" type="text/css" rel="stylesheet" media="screen">
+    <link href="public/css/SiteStyle.css" type="text/css" rel="stylesheet">
+    <link href="public/css/print.css" type="text/css" rel="stylesheet" media="print">
+
+    <!-- Custom Imports for GEC -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- Angular 1.5.7-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <!-- W3 Schools -->
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+
+
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div id="header" xmlns="">
+      <div id="global">
+        <div class="container">
+          <img style="height:auto" id="logo" href="public/images/universityofguelph.gif" src="public/images/universityofguelph.gif"></img>
+          <h1>
+            <span class="office"><a href="http://www.uoguelph.ca/registrar/">Office of Registrarial Services</a></span><span class="department"><a href="https://webadvisor.uoguelph.ca/">WebAdvisor for Students</a></span>
+          </h1>
+          <a id="ghlogo" href="http://www.guelphhumber.ca/"><img alt="University of Guelph-Humber Logo" src="public/css/ghlogo.gif"></a>
+        </div>
+      </div>
+      <div id="local">
+        <div class="container">
+          <div id="acctToolbar">
+            <ul class="toolbar">
+              <li id="acctHelp">
+                <a target="_help" href="http://www.uoguelph.ca/registrar/index.cfm?app=webadvisor&amp;page=help&amp;process=corewbfc" accesskey="h"><span class="label">Help</span></a>
+              </li>
+              <li id="acctConstituency">
+                <a href="https://webadvisor.uoguelph.ca/WebAdvisor/WebAdvisor?TOKENIDX=9057747325&amp;CONSTITUENCY=WBFC&amp;TYPE=M&amp;PID=CORE-WBFC" onmouseover="window.status=&#39;&#39;; return true;"><span class="label">Faculty Menu</span></a>
+              </li>
+              <li id="acctMain">
+                <a href="https://webadvisor.uoguelph.ca/WebAdvisor/WebAdvisor?TOKENIDX=9057747325&amp;CONSTITUENCY=WBFC&amp;TYPE=M&amp;PID=CORE-WBMAIN" onmouseover="window.status=&#39;&#39;; return true;"><span class="label">Main Menu</span></a>
+              </li>
+              <li id="acctLogin">
+                <a href="https://webadvisor.uoguelph.ca/WebAdvisor/WebAdvisor?TOKENIDX=9057747325&amp;CONSTITUENCY=WBFC&amp;type=P&amp;pid=UT-LGRQ" onmouseover="window.status=&#39;&#39;; return true;"><span class="label">Log In </span></a>
+              </li>
+            </ul>
+            <div id="acctWidget">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="custom">
+      </div>
+      <div id="askgryph">
+        <form action="http://askgryph.registrar.uoguelph.ca/" method="post" target="_ask">
+          <div>
+            <label id="ask-title" for="ask-question">Have a question? Ask Gryph!</label> <input id="ask-question" name="question" size="15" value="" type="text"> <input id="ask-button" type="submit" value="Ask"><input type="hidden" name="id" value="-1"><input type="hidden" name="requestType"><input type="hidden" name="interfaceID" value="1"><input type="hidden" name="source" value="1">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main" style="background-color:rgb(142,137, 123)">
+      <div class="container">
+           
+        <div ng-controller="MainController">
+
+          <div style="width:200px;height:250px">
+            <img src="public/images/cannonbanner.jpg">
+          </div>
+          <h1>Cannon Scheduler</h1> 
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+
+    <!-- Misc -->
+    <div id="misc" xmlns="">
+      <div class="container">
+        <div id="links">
+          <p id="aodafooter">If you require a student record or information on program requirements in an alternate format, please contact <a href="mailto:ups@uoguelph.ca">ups@uoguelph.ca</a> <i class="fa fa-envelope" aria-hidden="true"> </i>.
+          </p>
+          <div class="custom">
+          </div>
+        </div>
+        <div id="address" class="vcard">
+          <div class="org fn">University of Guelph</div>
+          <div class="adr">
+            <div>
+              <a href="http://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;msa=0&amp;msid=106115594900620713079.000436308185e9184c678&amp;ll=43.531407,-80.228584&amp;spn=0.007607,0.014591&amp;z=16&amp;om=1" title="Find us on Google Maps" class="street-address">50 Stone Road East</a>
+            </div>
+            <span class="locality">Guelph</span>, 
+            <span class="region">Ontario</span>, 
+            <span class="postal-code">N1G 2W1</span>
+            <br>
+            <span class="country-name">Canada</span>
+          </div>
+          <div class="tel">519-824-4120</div>
+        </div>
+        <div class="clear">
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer" xmlns="">
+      <div class="container">
+        <p>© Office of Registrarial Services</p>
+      </div>
+    </div>
+
+  </body>
+
+   <script>
+      var app = angular.module('Cannon-Scheduler', []);
+
+    app.controller('MainController', function($scope) {
+
+      $scope.name = 'its working';
+
+    });
+
+
+
+    </script>
+</html>
