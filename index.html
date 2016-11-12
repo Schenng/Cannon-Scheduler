@@ -74,13 +74,8 @@
     <div id="main" style="background-color:rgb(142,137, 123)">
       <div class="container">
            
-        <div ng-controller="MainController">
+        <div w3-include-html="app.html"></div>
 
-          <div style="width:200px;height:250px">
-            <img src="public/images/cannonbanner.jpg">
-          </div>
-          <h1>Cannon Scheduler</h1> 
-        </div>
         <div class="clear">
         </div>
       </div>
@@ -123,16 +118,7 @@
 
   </body>
 
-   <script>
-      var app = angular.module('Cannon-Scheduler', []);
-
-    app.controller('MainController', function($scope) {
-
-      $scope.name = 'its working';
-
-    });
-
-
-
-    </script>
+  <script>
+    w3IncludeHTML();
+  </script>
 </html>
