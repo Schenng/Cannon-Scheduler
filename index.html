@@ -1,6 +1,6 @@
   <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-  <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="Cannon-Scheduler">
+  <html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="CatanBoardGenerator">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -17,15 +17,21 @@
 
     <!-- Custom Imports for GEC -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!-- Angular 1.5.7-->
+    
+    <!-- Angular 1.5.7-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <!-- W3 Schools -->
-    <script src="js/w3data.js"></script>
+
+    <!-- Underscore -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+    <!-- Local App -->
+    <script src="index.js"></script>
+
   </head>
 
-  <body>
+  <body ng-controller="MainController">
     <!-- Header -->
-    <div id="header" xmlns="">
+    <div id="header">
       <div id="global">
         <div class="container">
           <img style="height:auto" id="logo" href="public/images/universityofguelph.gif" src="public/images/universityofguelph.gif"></img>
@@ -70,10 +76,71 @@
 
     <!-- Main Content -->
     <div id="main" style="background-color:rgb(142,137, 123)">
-      <div class="container">
-           
-        <div w3-include-html="app.html"></div>
+      <div class="container" style="background-image: url('public/images/cannonbanner.jpg');height:400px">
+        <div style="padding-left:55px">
 
+          <br>
+          <p style="font-size:32px;font-weight:200">Cannon Scheduler</p>
+          <br>
+          <button type="button" style="padding:10px;border-radius:5px;background-color:#EEE" ng-click="addGroup('true');"> Add a group </button>
+          <button type="createSchedule" style="padding:10px;border-radius:5px;background-color:#EEE" ng-click="createSchedule();scheduleToggle('true')"> View Schedule </button>
+          <br>
+          <br>
+
+          <div ng-if="showForm == true">
+            <form>
+              Group Name:<br>
+              <input type="text" ng-model="groups.name"><br>
+              Number of People:<br>
+              <input type="text" ng-model="groups.people"><br>
+               Arrival time:<br>
+              <input type="text" ng-model="groups.arrivalTime"><br>
+               Length (Hours:Minutes):<br>
+              <input type="text" ng-model="groups.length"><br>
+               Email:<br>
+              <input type="text" ng-model="groups.email"><br>
+            </form>
+            <br>
+            <div syle="text-align:center;">
+              <button type="createSchedule" style="padding:5px;border-radius:5px;background-color:#EEE" ng-click="addGroup('false');"> Cancel </button>
+              <button type="createSchedule" style="padding:5px;border-radius:5px;background-color:#EEE" ng-click="addGroup('false');confirm('true');"> Add </button>
+            </div>
+            <br>
+          </div>
+
+          <div ng-if="showConfirm == true">
+            <h3> Thanks for scheduling the cannon.</h3>
+            <br>
+            <h4> Confirmation </h4>
+            <div style="background-color:#eee;border-radius:5px;width:200px;padding-left:10px">
+              <br>
+                <p><b>Name: </b>{{groups.name}}</p>
+                <p><b>People: </b>{{groups.people}}</p>
+                <p><b>Arrival Time: </b>{{groups.arrivalTime}}</p>
+                <p><b>Length: </b> {{groups.length}}</p>
+                 <p><b>Email: </b> {{groups.email}}</p>
+              </br>
+            </div>
+            <br>
+            <h3> You will receive an email shortly</h3>
+            <br>
+             <button type="createSchedule" style="padding:5px;border-radius:5px;margin-bottom:20px;background-color:#EEE" ng-click="confirm('false');"> Back </button>
+          </div>
+
+          <div ng-show="showSchedule == true" style="padding-margin:20px">
+             <p ng-repeat="group in schedule">
+              <span> Scheduled Time {{group["Arrival time"]}}, </span>
+              <span> Team Name {{group["Group Name"]}}, </span>
+              <span> Number of People {{group["Number of people"]}}, </span>
+              <span> Duration {{group["duration"]}} </span>            
+            </p>
+            <br>
+             <button type="createSchedule" style="padding:5px;margin-bottom:20px;border-radius:5px;background-color:#EEE" ng-click="scheduleToggle('false');"> Back </button>
+          </div>
+
+
+
+        </div>
         <div class="clear">
         </div>
       </div>
@@ -116,7 +183,4 @@
 
   </body>
 
-  <script>
-    w3IncludeHTML();
-  </script>
 </html>
